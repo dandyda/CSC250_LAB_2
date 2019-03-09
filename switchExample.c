@@ -17,6 +17,10 @@ int main(void)
     //drawText(char string);
     printf("\nThe word entered was: %s\n", userString);
     
+    int i = 0;
+    while (userString[i] != '\0')
+    {   
+    
     for( i=0; i < SIZE; i++ ) {
     
     switch (userString[i]) {
@@ -164,7 +168,6 @@ int main(void)
         }//end switch
     }//end for
     
-    
-    
+    }//end while    
 
 }//end main
