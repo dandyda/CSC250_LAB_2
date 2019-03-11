@@ -1,17 +1,11 @@
-
-
-/* it compiles and graphics window opens but graphics are not printing */
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "gfx2.h"
 #include "copyLetterLib.h"
 #define SIZE 80
 
-//prototype function called print is POINTING to array called input and renaming it 'userString'
-int drawText(char userStringInput[SIZE], double ulCornerX, double ulCornerY, double height)
+//prototype function
+(void)drawText(char* userStringInput, double ulCornerX, double ulCornerY, double height)
 {
     
     char c;
@@ -225,19 +219,17 @@ int drawText(char userStringInput[SIZE], double ulCornerX, double ulCornerY, dou
                 break;            
                               
         }//end switch
-    }//end for
-    
-     
-   
-	
-	
-	    
+    }//end for   
 	
 	    
 }//end drawText prototype function
 
 
 
+
+
+//prototype function pulling variables from main function for its own use
+(void)drawText(char userStringInput, double ulCornerX, double ulCornerY, double height);
 
 int main()
 {
@@ -276,8 +268,7 @@ int main()
 	gfx_open(xSize,ySize,"Graphics Letter Library");
 	gfx_color(r,g,b);// Set the current drawing color to user preference
     
-    //prototype function pulling variables from main function for its own use
-    int drawText(char userStringInput[SIZE], double ulCornerX, double ulCornerY, double height);
+    
     
     while(1) {
 		// Wait for the user to press a character.
@@ -292,4 +283,4 @@ int main()
 	
       		
 	
-} //End main function
+} }//End main function
