@@ -11,7 +11,7 @@ void drawText(char* userStringInput, double ulCornerX, double ulCornerY, double 
 int main()
 {
     
- //sets screen size 800 x 800
+    //sets screen size 800 x 800
 	int ySize = 800;
 	int xSize = 800;
     
@@ -45,18 +45,14 @@ int main()
 	gfx_open(xSize,ySize,"Graphics Letter Library");
 	gfx_color(r,g,b);// Set the current drawing color to user preference
     
-    
-    
-    while(1) {
+   
+        while(1) {
 		// Wait for the user to press a character.
 		c = gfx_wait();
 
 		// Quit if it is the letter q.
 		if(c=='q') break;
-	}//end while 	
-	
-	
-      		
+	}//end while       		
 	
 } //End main function
 
@@ -64,18 +60,17 @@ int main()
 void drawText(char* userStringInput, double ulCornerX, double ulCornerY, double height)
 {
     
-    char c;
     
     
-	
 // loop for switch statement, variable interger i is our watchdog for null terminator    
     for(int i=0; i<SIZE; i++){
     	ulCornerX += .825*height;//establishes a scalable spacing using character height for drawChar functions
     	
+    	
     //tests userStringInput for each character against each case until null terminator is encountered. Commented out cases do not exist
     //in letterLibrary function.  This allows switch selection to choose default when character missing from drawChar function is encountered.	
              
-        switch (userStringInput[i]) {
+        switch (userStringInput[i])  {
                      
             /*case 'A':
             case 'a':
@@ -276,6 +271,8 @@ void drawText(char* userStringInput, double ulCornerX, double ulCornerY, double 
                               
         }//end switch
     }//end for   
+    
+	
 	
 	    
 }//end drawText prototype function
