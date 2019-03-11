@@ -4,8 +4,64 @@
 #include "copyLetterLib.h"
 #define SIZE 80
 
-//prototype function
-(void)drawText(char* userStringInput, double ulCornerX, double ulCornerY, double height)
+
+//prototype function pulling variables from main function for its own use
+void drawText(char userStringInput, double ulCornerX, double ulCornerY, double height);
+
+int main()
+{
+    
+ //sets screen size 800 x 800
+	int ySize = 800;
+	int xSize = 800;
+    
+    long int r, g, b;//represent user's color choices
+    double ulCornerX, ulCornerY, height;//represent users's starting point and character size preferences
+    char c, userStringInput[SIZE];//Initializing the array named 'UserStringInput' and can hold 99 characters and one null termination character
+           
+      
+    printf("Enter a word:\n");// prompts user input for a string of character stored in array userStringInput
+    scanf("%s", userStringInput);
+    
+    // ask user for the red, green and blue color combo values range 0-255
+	printf("Enter the RED color value (0-255): ");
+	scanf("%ld", &r);	
+	printf("Enter the GREEN color value (0-255): ");
+	scanf("%ld", &g);	
+	printf("Enter the BLUE color value (0-255): ");
+	scanf("%ld", &b);
+    
+    //establishes character size for graphics using user preferences
+    printf("Enter a height:\n");
+    scanf("%lf", &height);    
+    //establishes a starting point for graphics using user preferences
+    printf("Enter x starting coordinate:\n");
+    scanf("%lf", &ulCornerX);    
+    printf("Enter y starting coordinate:\n");
+    scanf("%lf", &ulCornerY);    
+    
+    
+    // Open a new window for drawing using previously declared integer sizes.
+	gfx_open(xSize,ySize,"Graphics Letter Library");
+	gfx_color(r,g,b);// Set the current drawing color to user preference
+    
+    
+    
+    while(1) {
+		// Wait for the user to press a character.
+		c = gfx_wait();
+
+		// Quit if it is the letter q.
+		if(c=='q') break;
+	}//end while 	
+	
+	
+      		
+	
+} //End main function
+
+//prototype function called drawText()
+void drawText(char* userStringInput, double ulCornerX, double ulCornerY, double height)
 {
     
     char c;
@@ -223,64 +279,3 @@
 	
 	    
 }//end drawText prototype function
-
-
-
-
-
-//prototype function pulling variables from main function for its own use
-(void)drawText(char userStringInput, double ulCornerX, double ulCornerY, double height);
-
-int main()
-{
-    
- //sets screen size 800 x 800
-	int ySize = 800;
-	int xSize = 800;
-    
-    long int r, g, b;//represent user's color choices
-    double ulCornerX, ulCornerY, height;//represent users's starting point and character size preferences
-    char c, userStringInput[SIZE];//Initializing the array named 'UserStringInput' and can hold 99 characters and one null termination character
-           
-      
-    printf("Enter a word:\n");// prompts user input for a string of character stored in array userStringInput
-    scanf("%s", userStringInput);
-    
-    // ask user for the red, green and blue color combo values range 0-255
-	printf("Enter the RED color value (0-255): ");
-	scanf("%ld", &r);	
-	printf("Enter the GREEN color value (0-255): ");
-	scanf("%ld", &g);	
-	printf("Enter the BLUE color value (0-255): ");
-	scanf("%ld", &b);
-    
-    //establishes character size for graphics using user preferences
-    printf("Enter a height:\n");
-    scanf("%lf", &height);    
-    //establishes a starting point for graphics using user preferences
-    printf("Enter x starting coordinate:\n");
-    scanf("%lf", &ulCornerX);    
-    printf("Enter y starting coordinate:\n");
-    scanf("%lf", &ulCornerY);    
-    
-    
-    // Open a new window for drawing using previously declared integer sizes.
-	gfx_open(xSize,ySize,"Graphics Letter Library");
-	gfx_color(r,g,b);// Set the current drawing color to user preference
-    
-    
-    
-    while(1) {
-		// Wait for the user to press a character.
-		c = gfx_wait();
-
-		// Quit if it is the letter q.
-		if(c=='q') break;
-	}//end while   
-   
-	
-	
-	
-      		
-	
-} }//End main function
