@@ -231,26 +231,26 @@ int main()
                 drawChar9(ulCornerX,ulCornerY,height);
                 break; */
             
-            //cases below ignore new lines, tabs, spaces in array    
+            //cases below ignore new lines, tabs, spaces and null terminators in array    
             case '\n': 
             case '\t':
             case ' ':
-            case '\0':
+            case '\0'://without this default prints endlessly after encoutering a null terminator
                break;
             
             /*case '$':
-                drawChar$(0,0,100);
-                break;
+                drawCharDollar(ulCornerX,ulCornerY,height);
+                break; */
             
-            case '!':
+            /*case '!':
                 drawChar!(0,0,100);
-                break;
+                break; */
             
             case '?':
-                drawCharQuestion(0,0,100);
+                drawCharQuestion(ulCornerX,ulCornerY,height);
                 break;
         
-            case '#':
+           /* case '#':
                 drawChar#(0,0,100);
                 break;*/
                 
