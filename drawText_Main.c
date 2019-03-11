@@ -1,3 +1,9 @@
+
+
+/* it compiles and graphics window opens but graphics are not printing */
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "gfx2.h"
