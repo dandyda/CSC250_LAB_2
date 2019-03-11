@@ -52,7 +52,7 @@ int main()
     // loop for case switch
     for(int i=0; i<SIZE; i++){
     	c = userStringInput[i];
-    	ulCornerX += .8*height;
+    	ulCornerX += .8*height;//establishes a scalable spacing using character height for drawChar functions
     	
     //use a grey box to test each character drawn
     	gfx_color(100,100,100);
