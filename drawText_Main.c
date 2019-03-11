@@ -6,7 +6,7 @@
 
 
 //prototype function pulling variables from main function for its own use
-void drawText(char userStringInput, double ulCornerX, double ulCornerY, double height);
+void drawText(char* userStringInput, double ulCornerX, double ulCornerY, double height);
 
 int main()
 {
