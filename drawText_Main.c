@@ -5,18 +5,20 @@
 #define SIZE 80
 
 //prototype function called print is POINTING to array called input and renaming it 'userString'
-drawText(userStringInput, r, g, b, ulCornerX, ulCornerY, height)
+int drawText(char userStringInput[SIZE], double ulCornerX, double ulCornerY, double height)
 {
     
     char c;
-
+    
+    
+	
 // loop for switch statement, variable interger i is our watchdog for null terminator    
     for(int i=0; i<SIZE; i++){
     	ulCornerX += .825*height;//establishes a scalable spacing using character height for drawChar functions
     	
     //tests userStringInput for each character against each case until null terminator is encountered. Commented out cases do not exist
     //in letterLibrary function.  This allows switch selection to choose default when character missing from drawChar function is encountered.	
-        gfx_color(r,g,b);     
+             
         switch (userStringInput[i]) {
                      
             /*case 'A':
@@ -219,17 +221,11 @@ drawText(userStringInput, r, g, b, ulCornerX, ulCornerY, height)
         }//end switch
     }//end for
     
-    while(1) {
-		// Wait for the user to press a character.
-		c = gfx_wait();
-
-		// Quit if it is the letter q.
-		if(c=='q') break;
-	}//end while   
+     
    
 	
 	
-	return (0);    
+	    
 	
 	    
 }//end drawText prototype function
@@ -246,7 +242,7 @@ int main()
     
     long int r, g, b;//represent user's color choices
     double ulCornerX, ulCornerY, height;//represent users's starting point and character size preferences
-    char userStringInput[SIZE];//Initializing the array named 'UserStringInput' and can hold 99 characters and one null termination character
+    char c, userStringInput[SIZE];//Initializing the array named 'UserStringInput' and can hold 99 characters and one null termination character
            
       
     printf("Enter a word:\n");// prompts user input for a string of character stored in array userStringInput
@@ -275,7 +271,19 @@ int main()
 	gfx_color(r,g,b);// Set the current drawing color to user preference
     
     //prototype function pulling variables from main function for its own use
-    drawText(userStringInput, r, g, b, ulCornerX, ulCornerY, height);
+    int drawText(char userStringInput[SIZE], double ulCornerX, double ulCornerY, double height);
+    
+    while(1) {
+		// Wait for the user to press a character.
+		c = gfx_wait();
+
+		// Quit if it is the letter q.
+		if(c=='q') break;
+	}//end while   
+   
+	
+	
+	
       		
 	
 } //End main function
