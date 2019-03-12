@@ -2,7 +2,7 @@
 //Dino Dan CSC250-SP19
 // Any Line commented out means function does not operate normally
 
-void drawText(char* userStringInput, int r, int g, int b, double ulCornerX, double ulCornerY, double height);
+void drawText(char* userStringInput, int r, int g, int b, double ulX, double ulY, double height);
 
 void drawCharA(double upperleftx, double upperlefty, double height);
 void drawCharB(double upperleftx, double upperlefty, double height);
