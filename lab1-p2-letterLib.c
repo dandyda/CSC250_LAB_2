@@ -6,14 +6,17 @@
 #include "lab1-p2-letterLib.h"
 
 //prototype function called drawText(character array, colors, x and y starting coords, character height) 
-void drawText(char* userStringInput, int r, int g, int b, double ulCornerX, double ulCornerY, double height)
+void drawText(char* userStringInput, int r, int g, int b, double ulX, double ulY, double height)
 {
     
     /**loop for switch statement, variable interger i is our watchdog for null terminator and
     ***increments through string and applies each character to the selection switch statements cases***/  
     for( int i=0; userStringInput[i] != '\0'; i++ ){
-    	ulCornerX += .825*height;//establishes a scalable spacing using character height for drawChar functions
-        
+    	//establishes a scalable spacing using character height for drawChar functions
+        double spacing = .25 * height;
+		double width = .750 * height;
+		double ulCornerX = ulX + (width * i) + (spacing * i-1); 
+		double ulCornerY = ulY;
         gfx_color(r,g,b);//applies user color preferences
                 
     //tests userStringInput for each character against each case until null terminator is encountered. Commented out cases do not exist
