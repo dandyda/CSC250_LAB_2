@@ -1,4 +1,5 @@
 
+
 /***Dino Dan, CSC250-SP19**********************************************
 ****Assisted by: j1ff7296, Noah Manter, killengary37, and rawwillard***
 ****lab1-p1-GfxText lab 2, 3/11/2019 version 1.0**********************/
@@ -73,13 +74,6 @@ int main(void)
 
 
 } //End main function
-
-
-
-
-
-
-
 
 
 
